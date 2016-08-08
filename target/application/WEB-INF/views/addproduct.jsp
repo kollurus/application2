@@ -12,7 +12,7 @@
 <body>
 <c:url var="addAction" value="addproduct"></c:url>
 <h1>product page</h1>
-<form:form action="${addAction}" commandName="product">
+<form:form action="${addAction}" commandName="product" enctype="multipart/form-data" method="post">
 		<table>
 			<tr>
 				<td><form:label path="id">
@@ -47,6 +47,11 @@
 					</form:label></td>
 				<td><form:input path="price" required="true" /></td>
 			</tr>
+			<tr>
+			<td align ="left"><form:label path ="image">
+			<spring:message text ="Image" />
+			</form:label></td>
+			<td align ="left"><form:input type="file" path="image"/></td>
 			
 			<tr>
 				<td colspan="2"><c:if test="${!empty product.name}">

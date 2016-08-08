@@ -16,18 +16,18 @@
 <body>
 
 
-  <h2>welcome admin</h2>
+  <h2>ADMIN ACCESS!!</h2>
   
   
   <form action="product">
-    <button type="submit" class="btn btn-primary">Add product</button>
+    <button type="submit" class="btn btn-primary">Add product..</button>
   </form><br>
    <form action="category">
-<button type="submit" class="btn btn-primary">Add Category</button>
+<button type="submit" class="btn btn-primary">Add Category..</button>
 </form><br>
   
    <form action="supplier">
-<button type="submit" class="btn btn-primary">Add supplier</button>
+<button type="submit" class="btn btn-primary">Add supplier..</button>
 </form><br>
  
  

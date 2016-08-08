@@ -54,7 +54,7 @@
 	<br>
 	
 	<c:if test="${!empty categoryList}">
-	<h3>Supplier List</h3>
+	<h3>Category List</h3>
 		<table class="tg">
 			<tr>
 				<th >category ID</th>
