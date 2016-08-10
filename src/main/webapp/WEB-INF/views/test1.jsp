@@ -24,6 +24,19 @@
     <script src="Scripts/respond.js"></script>
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/Site.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+
+		<!-- Website CSS style -->
+		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+		<!-- Website Font style -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+    
   <style>
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
@@ -33,7 +46,7 @@
   }
   body
   {
-background-color:black;
+background-color:white;
 }
 h1
 {
@@ -48,14 +61,14 @@ font-size:20px;
   </style>
   
 </head>
-<body background-color:black>
+<body background-color:white>
 
 
 <!-- Navigation Bar 1 Start -->
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">COLDRED</a>
+				<a class="navbar-brand" href="#">F!</a>
 			</div>
 			<!-- <ul class="nav navbar-nav">
 				<li class="active"><a href="#">Home</a></li> -->
@@ -115,7 +128,9 @@ font-size:20px;
            
             <ul class="nav nav-sidebar">
               <li class="active"><a href="#">HOME</a></li>
-              <li class="dropdown"><a class="dropdown-toggle"
+              
+     
+                   <li class="dropdown"><a class="dropdown-toggle"
 					data-toggle="dropdown" href="#">CLOTHING <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="#">Ethnic wear</a></li>
@@ -273,7 +288,7 @@ font-size:20px;
                         <div class="thumbnail hovereffect">
                             <img class="img-responsive" src="F:\workspace\application\src\main\webapp\images\FB_IMG_1463036686004.jpg" alt="...">
                             <div class="caption">
-                                <h3>Thumbnail label</h3>
+                                <h3></h3>
                                 <p>...</p>
                                 <p><a href="#" class="btn btn-primary" role="button">Add To Cart</a></p>
                             </div>
@@ -283,7 +298,7 @@ font-size:20px;
                         <div class="thumbnail hovereffect">
                             <img class="img-responsive" src="F:\workspace\application\src\main\webapp\images\FB_IMG_1462951936995.jpg" alt="...">
                             <div class="caption">
-                                <h3>Thumbnail label</h3>
+                                <h3></h3>
                                 <p>...</p>
                                 <p><a href="#" class="btn btn-primary" role="button">Add To Cart</a></p>
                             </div>
@@ -293,7 +308,7 @@ font-size:20px;
                         <div class="thumbnail hovereffect">
                             <img class="img-responsive" src="F:\workspace\application\src\main\webapp\images\IMG_20150902_173359.jpg" alt="...">
                             <div class="caption">
-                                <h3>Thumbnail label</h3>
+                                <h3></h3>
                                 <p>...</p>
                                 <p><a href="#" class="btn btn-primary" role="button">Add To Cart</a></p>
                             </div>
@@ -303,7 +318,7 @@ font-size:20px;
                         <div class="thumbnail hovereffect">
                             <img class="img-responsive" src="F:\workspace\application\src\main\webapp\images\FB_IMG_1462338462637.jpg" alt="...">
                             <div class="caption">
-                                <h3>Thumbnail label</h3>
+                                <h3></h3>
                                 <p>...</p>
                                 <p><a href="#" class="btn btn-primary" role="button">Add To Cart</a></p>
                             </div>
@@ -317,7 +332,7 @@ font-size:20px;
                         <div class="thumbnail hovereffect">
                             <img class="img-responsive" src="F:\workspace\application\src\main\webapp\images\IMG_20151105_222604.jpg" alt="...">
                             <div class="caption">
-                                <h3>Thumbnail label</h3>
+                                <h3></h3>
                                 <p>...</p>
                                 <p><a href="#" class="btn btn-primary" role="button">Add To Cart</a></p>
                             </div>
@@ -327,7 +342,7 @@ font-size:20px;
                         <div class="thumbnail hovereffect">
                             <img class="img-responsive" src="F:\workspace\application\src\main\webapp\images\IMG_20151105_222551.jpg" alt="...">
                             <div class="caption">
-                                <h3>Thumbnail label</h3>
+                                <h3></h3>
                                 <p>...</p>
                                 <p><a href="#" class="btn btn-primary" role="button">Add To Cart</a></p>
                             </div>
@@ -337,7 +352,7 @@ font-size:20px;
                         <div class="thumbnail hovereffect">
                             <img class="img-responsive" src="F:\workspace\application\src\main\webapp\images\IMG_20151006_234944.jpg" alt="...">
                             <div class="caption">
-                                <h3>Thumbnail label</h3>
+                                <h3></h3>
                                 <p>...</p>
                                 <p><a href="#" class="btn btn-primary" role="button">Add To Cart</a></p>
                             </div>
@@ -347,7 +362,7 @@ font-size:20px;
                         <div class="thumbnail hovereffect">
                             <img class="img-responsive" src="F:\workspace\application\src\main\webapp\images\FB_IMG_1464505940130.jpg" alt="...">
                             <div class="caption">
-                                <h3>Thumbnail label</h3>
+                                <h3></h3>
                                 <p>...</p>
                                 <p><a href="#" class="btn btn-primary" role="button">Add To Cart</a></p>
                             </div>
@@ -366,7 +381,7 @@ font-size:20px;
                             <i class="fa fa-phone"></i>
                         </div>
                         <div class="media-body">
-                            <h2>Have a question or need a custom quote?</h2>
+                            <h2>Have a Question or Need a Custom Quote?</h2>
                             <p>We are grateful for your concern, love to hear from you and just phone call away to serve you. 
                             Do reach us at: +0123 456 70 80</p>
                         </div>
@@ -440,13 +455,30 @@ font-size:20px;
             </div>
         </div>
     </section><!--/#bottom-->
+<div class="container">
+    <div class="row">
 
-
-<footer>
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Contacts</a>
-<a href="#">Feedback</a>
-</footer>
+        <div class="text-center">
+            <h6>follow us  </h6>
+            <!-- just add href= for your links, like this: -->
+            <a class="btn btn-social-icon btn-vk"><i class="fa fa-vk"></i></a>
+            <a class="btn btn-social-icon btn-instagram"><i class="fa fa-instagram"></i></a>
+            <a href="http://facebook.com" class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
+            <a href="http://youtube.com" class="btn btn-social-icon btn-youtube"><i class="fa fa-youtube"></i></a>
+            <a class="btn btn-social-icon btn-bitbucket"><i class="fa fa-bitbucket"></i></a>
+            <a class="btn btn-social-icon btn-dropbox"><i class="fa fa-dropbox"></i></a>
+            <a class="btn btn-social-icon btn-flickr"><i class="fa fa-flickr"></i></a>
+            <a class="btn btn-social-icon btn-foursquare"><i class="fa fa-foursquare"></i></a>
+            <a class="btn btn-social-icon btn-github"><i class="fa fa-github"></i></a>
+            <a class="btn btn-social-icon btn-google-plus"><i class="fa fa-google-plus"></i></a>
+            <a class="btn btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
+            <a class="btn btn-social-icon btn-tumblr"><i class="fa fa-tumblr"></i></a>
+            <a class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
+            
+            
+        </div>
+    </div>
+    </div>
+    
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.niit.controller;
+ package com.niit.controller;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -22,7 +22,7 @@ public class Uplaodfilecontroller {
 	@RequestMapping(value = "uploadFile", method = RequestMethod.POST)
 	public @ResponseBody
 	String uploadFileHandler(@RequestParam("name") String name,
-			@RequestParam("file") MultipartFile file) {
+			@RequestParam("file") MultipartFile file) { 
 
 		if (!file.isEmpty()) {
 			try {

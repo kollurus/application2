@@ -4,6 +4,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -38,7 +40,20 @@ public class FileUtil {
 		 }
 	 }
 	 
-	 
+	
 	 
  }
+
+	public static void deleteimage(String path, String filename) {
+		// TODO Auto-generated method stub
+		if(Files.exists(Paths.get(path+ filename))){
+			try{
+				Files.delete(Paths.get(path+ filename));
+				
+			} catch (Exception e){
+				e.printStackTrace();
+				throw new RuntimeException("File unable to delete", e);
+			}
+		}
+	}
 }

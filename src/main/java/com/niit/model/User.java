@@ -11,23 +11,37 @@ import org.springframework.stereotype.Component;
 @Table
 @Component
 public class User {
+	
 	@Id
 	private String id;
 	private String name;
-	private String password;
-	private String mobile;
 	private String email;
-	private String address;
+	private String username;
+	private String dateofbirth;
+	private String mobile;
+	private String password;
 	
 	
-	public String getId() {
-		return id;
+	
+	
+	
+
+	public String getUsername() {
+		return username;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	
+
+	public String getDateofbirth() {
+		return dateofbirth;
+	}
+
+	public void setDateofbirth(String dateofbirth) {
+		this.dateofbirth = dateofbirth;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -59,13 +73,6 @@ public class User {
 		this.email = email;
 	}
 
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
 	
 	
 	

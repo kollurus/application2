@@ -29,7 +29,7 @@
 					</c:otherwise>
 				</c:choose>
 			<tr>
-			<form:input path="id" hidden="true"  />
+			
 				<td><form:label path="name">
 						<spring:message text="Name" />
 					</form:label></td>

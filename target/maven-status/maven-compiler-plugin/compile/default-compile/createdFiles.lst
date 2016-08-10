@@ -9,16 +9,13 @@ com\niit\controller\Registrationcontroller.class
 com\niit\DAO\UserDAO.class
 com\niit\DAO\ProductDAO.class
 com\niit\model\Userdetails.class
-com\niit\controller\Suppliercontroller.class
 com\niit\DAO\SupplierDAO.class
 com\niit\DAO\ProductDAOimpl.class
 com\niit\DAO\CategoryDAOimpl.class
 com\niit\DAO\UserdetailsDAOimpl.class
 com\niit\util\FileUtil.class
 com\niit\controller\Logincontroller.class
-com\niit\controller\Productcontroller.class
 com\niit\model\Category.class
 com\niit\DAO\UserdetailsDAO.class
 com\niit\DAO\CategoryDAO.class
 com\niit\config\ApplicationContextConfig.class
-com\niit\controller\Uplaodfilecontroller.class

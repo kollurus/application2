@@ -25,9 +25,9 @@ import com.niit.model.User;
 			sessionFactory.getCurrentSession().saveOrUpdate(user);
 		} 
 		@Transactional
-		public void delete(String id){
+		public void delete(String name){
 		     User user = new User();
-			user.setId(id);
+			user.setName(name);
 			sessionFactory.getCurrentSession().delete(user);
 		}
 		@Transactional

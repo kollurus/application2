@@ -1,20 +1,21 @@
 package com.niit.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
-	import org.springframework.stereotype.Controller;
-	import org.springframework.ui.Model;
-	import org.springframework.web.bind.annotation.ModelAttribute;
-	import org.springframework.web.bind.annotation.PathVariable;
-	import org.springframework.web.bind.annotation.RequestMapping;
-	import org.springframework.web.bind.annotation.RequestMethod;
-	//import org.springframework.web.servlet.ModelAndView;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.niit.DAO.ProductDAO;
 import com.niit.model.Product;
 import com.niit.util.FileUtil;
 
-	
-	@Controller
+@Controller
 	public class Productcontroller {
 
 		@Autowired
@@ -30,7 +31,8 @@ import com.niit.util.FileUtil;
 		}
 
 		@RequestMapping(value = { "addproduct", "editproduct/addproduct" }, method = RequestMethod.POST)
-		public String addProduct(@ModelAttribute("product") Product product) {
+		public String addProduct(@ModelAttribute("product") Product product,HttpServletRequest request) {
+			String path=request.getSession().getServletContext().getRealPath("/")+"\\resources\\images\\product\\";
 			productDAO.saveOrUpdate(product);
 			MultipartFile file =product.getImage();
 			FileUtil.upload(path, file, product.getId()+".jpg");
@@ -46,11 +48,15 @@ import com.niit.util.FileUtil;
 		}
 
 		@RequestMapping(value = { "removeproduct/{id}", "editproduct/removeproduct/{id}" })
-		public String removeproduct(@PathVariable("id") String id, Model model) throws Exception {
+		public String removeproduct(@PathVariable("id") String id, Model model,HttpServletRequest request) throws Exception {
+			String path=request.getSession().getServletContext().getRealPath("/")+"\\resources\\images\\product\\";
+			FileUtil.deleteimage(path, id+".jpg");
 			productDAO.delete(id);
 			model.addAttribute("message", "Successfully Deleted");
 			return "redirect:/product";
 		}
+		
+	
 	}
 
 
