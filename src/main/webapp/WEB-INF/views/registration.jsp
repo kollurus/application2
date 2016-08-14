@@ -28,7 +28,7 @@
 		<title>registration</title>
 	</head>
   <body>
- <form action = "registration1" method = "post">
+ <!-- <form action = "registration1" method = "post">
 		<div class="container">
 			<div class="row main">
 				<div class="panel-heading">
@@ -122,13 +122,13 @@
 		<script type="text/javascript" src="assets/js/bootstrap.js"></script>
 	
 
-<div class="container">
-    <div class="row">
+<!-- <div class="container">
+    <div class="row"> 
 
         <div class="text-center">
             <h6>follow us  </h6>
             <!-- just add href= for your links, like this: -->
-            <a class="btn btn-social-icon btn-vk"><i class="fa fa-vk"></i></a>
+         <!--     <a class="btn btn-social-icon btn-vk"><i class="fa fa-vk"></i></a>
             <a class="btn btn-social-icon btn-instagram"><i class="fa fa-instagram"></i></a>
             <a href="http://facebook.com" class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
             <a href="http://youtube.com" class="btn btn-social-icon btn-youtube"><i class="fa fa-youtube"></i></a>
@@ -145,7 +145,97 @@
             
         </div>
     </div>
-    </div>
+    </div> -->
     
+    <c:url var="addAction" value="addsupplier"></c:url>
+
+	<form:form action="${addAction}" commandName="supplier">
+		<table>
+			<tr>
+				<td><form:label path="id">
+						<spring:message text="ID" />
+					</form:label></td>
+				<c:choose>
+					<c:when test="${!empty user.id}">
+						<td><form:input path="id" disabled="true" readonly="true" />
+						</td>
+					</c:when>
+
+					<c:otherwise>
+						<td><form:input path="id" pattern =".{3,10}" required="true" title="id should contains 3 to 10 characters" /></td>
+					</c:otherwise>
+				</c:choose>
+			<tr>
+			
+				<td><form:label path="name">
+						<spring:message text="Name" />
+					</form:label></td>
+				<td><form:input path="name" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="email">
+						<spring:message text="email" />
+					</form:label></td>
+				<td><form:input path="email" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="mobile">
+						<spring:message text="mobile" />
+					</form:label></td>
+				<td><form:input path="mobile" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="dateofbirth">
+						<spring:message text="dateofbirth" />
+					</form:label></td>
+				<td><form:input path="dateofbirth" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="password">
+						<spring:message text="password" />
+					</form:label></td>
+				<td><form:input path="password" required="true" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><c:if test="${!empty user.id}">
+						<input type="submit"
+							value="<spring:message text="Edit User"/>" />
+					</c:if> <c:if test="${empty user.id}">
+						<input type="submit" value="<spring:message text="Add User"/>" />
+					</c:if></td>
+			</tr>
+		</table>
+	</form:form>
+	<br>
+	
+	<c:if test="${!empty userList}">
+	<h3>User List</h3>
+		<table class="tg">
+			<tr>
+				<th >User ID</th>
+				<th >User Name</th>
+				<th >User Email</th>
+				<th >User Mobile</th>
+				<th >User date of birth</th>
+				<th >User password</th>
+				<th >Edit</th>
+				<th >Delete</th>
+			</tr>
+			<c:forEach items="${supplierList}" var="supplier">
+				<tr>
+					<td>${supplier.id}</td>
+					<td>${supplier.name}</td>
+					<td>${supplier.address}</td>
+					<td>
+					<form action="editsupplier/${supplier.id}"  method="post">
+					<input type="submit" value="Edit">
+					</form></td>
+					<td><form action="removesupplier/${supplier.id}">
+					<input type="submit" value="Delete">
+					</form></td>
+				</tr>
+			</c:forEach>
+		</table>
+	</c:if>
 </body>
 </html>

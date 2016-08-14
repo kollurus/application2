@@ -15,12 +15,22 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.DAO.CartDAO;
+import com.niit.DAO.CartDAOimpl;
 import com.niit.DAO.CategoryDAO;
 import com.niit.DAO.CategoryDAOimpl;
+import com.niit.DAO.ProductDAO;
+import com.niit.DAO.ProductDAOimpl;
+import com.niit.DAO.SupplierDAO;
+import com.niit.DAO.SupplierDAOimpl;
+import com.niit.DAO.UserDetailsDAO;
+import com.niit.DAO.UserDetailsDAOImpl;
+import com.niit.model.Cart;
 import com.niit.model.Category;
 import com.niit.model.Product;
 import com.niit.model.Supplier;
-import com.niit.model.User;
+import com.niit.model.UserDetails;
+
 
 	
 	@Configuration
@@ -52,7 +62,8 @@ import com.niit.model.User;
 			sessionBuilder.addAnnotatedClass(Category.class);
 			sessionBuilder.addAnnotatedClass(Supplier.class);
 			sessionBuilder.addAnnotatedClass(Product.class);
-			sessionBuilder.addAnnotatedClass(User.class);
+			sessionBuilder.addAnnotatedClass(UserDetails.class);
+			sessionBuilder.addAnnotatedClass(Cart.class);
 			System.out.println("session");
 			return sessionBuilder.buildSessionFactory();
 		}
@@ -69,5 +80,25 @@ import com.niit.model.User;
 		@Bean(name ="categoryDAO")
 		public CategoryDAO getCategoryDAO(SessionFactory sessionFactory){
 		return new CategoryDAOimpl(sessionFactory);
+	}
+		@Autowired
+		@Bean(name ="productDAO")
+		public ProductDAO getProductDAO(SessionFactory sessionFactory){
+		return new ProductDAOimpl(sessionFactory);
+	}
+		@Autowired
+		@Bean(name ="supplierDAO")
+		public SupplierDAO getSupplierDAO(SessionFactory sessionFactory){
+		return new SupplierDAOimpl(sessionFactory);
+	}
+		@Autowired
+		@Bean(name ="userDAO")
+		public UserDetailsDAO getUserDAO(SessionFactory sessionFactory){
+		return new UserDetailsDAOImpl(sessionFactory);
+	}
+		@Autowired
+		@Bean(name ="cartDAO")
+		public CartDAO getCartDAO(SessionFactory sessionFactory){
+		return new CartDAOimpl(sessionFactory);
 	}
 }

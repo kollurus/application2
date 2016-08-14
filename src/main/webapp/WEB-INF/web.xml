@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>dispatcher</display-name>
   <welcome-file-list>
-   <welcome-file>/WEB-INF/views/admin.jsp</welcome-file>
+   <welcome-file>/WEB-INF/views/trial.jsp</welcome-file>
   </welcome-file-list>
   
   <servlet>
@@ -20,9 +20,10 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/dispatcher-servlet.xml</param-value>		
 	</context-param>
- 	<!--  <listener>
+ 	<listener>
 		<listener-class>
 			org.springframework.web.context.ContextLoaderListener
 		</listener-class>
-	</listener> -->
+	</listener>
+	<!-- <welcome-file-list><welcome-file>/WEB-INF/views/test1.jsp</welcome-file></welcome-file-list> -->
  </web-app>

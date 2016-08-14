@@ -10,7 +10,7 @@
 
 </nav>
 <head>
-  <title>DEMO WEBPAGE</title>
+  <title>HOME PAGE</title>
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -111,10 +111,37 @@ font-size:20px;
 
 
 
+<!-- cart -->
 
 
+<c:if test="${!empty categoryList}">
+				<div>
+					<ul
+						class="w3-navbar w3-light-grey w3-round w3-small menu w3-card-4 "
+						Style="width: 70%; margin-left: 15%; margin-top: -10px">
+						<c:forEach items="${categoryList}" var="category">
+							<li><a href="${category.name}" class="w3-hover-none">${category.name}</a></li>
+						</c:forEach>
+						<li style="float: right"><a href="${id}/viewcart" class="w3-hover-none"><i
+								class="fa fa-shopping-cart"></i> View Cart</a></li>
+						<li style="float: right"><a href="#" class="w3-hover-none"><i
+								class="fa fa-user"></i> Hi,${name}</a></li>
+					</ul>
+				</div>
+			</c:if>
 
-
+				
+<c:if test="${!empty productList}">
+		<div>
+			<ul>
+				<c:forEach items="${productList}" var="product">
+					<li><a href="#${product.name}" class="w3-hover-none"><img alt="${product.id}" src="<c:url value ="/resources/images/product/${product.id}.jpg"></c:url>"></a></li>
+<li><a href="${id}/addtoCart/${product.id}" class ="w3-hover-none">ADD TO CART</a></li>
+</c:forEach>
+</ul>
+</div>
+</c:if>
+<!-- cart -->
 
 
 
@@ -479,6 +506,10 @@ font-size:20px;
         </div>
     </div>
     </div>
+    
+    <!-- chat code starts-->
+		<script type='text/javascript'>var fc_CSS=document.createElement('link');fc_CSS.setAttribute('rel','stylesheet');var isSecured = (window.location && window.location.protocol == 'https:');var lang = document.getElementsByTagName('html')[0].getAttribute('lang'); var rtlLanguages = ['ar','he']; var rtlSuffix = (rtlLanguages.indexOf(lang) >= 0) ? '-rtl' : '';fc_CSS.setAttribute('type','text/css');fc_CSS.setAttribute('href',((isSecured)? 'https://d36mpcpuzc4ztk.cloudfront.net':'http://assets1.chat.freshdesk.com')+'/css/visitor'+rtlSuffix+'.css');document.getElementsByTagName('head')[0].appendChild(fc_CSS);var fc_JS=document.createElement('script'); fc_JS.type='text/javascript';fc_JS.src=((isSecured)?'https://d36mpcpuzc4ztk.cloudfront.net':'http://assets.chat.freshdesk.com')+'/js/visitor.js';(document.body?document.body:document.getElementsByTagName('head')[0]).appendChild(fc_JS);window.freshchat_setting= 'eyJ3aWRnZXRfc2l0ZV91cmwiOiJjYXJlZXIuZnJlc2hkZXNrLmNvbSIsInByb2R1Y3RfaWQiOm51bGwsIm5hbWUiOiJIdWIgSVQgTGltaXRlZCIsIndpZGdldF9leHRlcm5hbF9pZCI6bnVsbCwid2lkZ2V0X2lkIjoiNDQ3ZDU3YjgtNDM0YS00YjlmLTg3OWMtMTNmMjAwYmQ5ZTQxIiwic2hvd19vbl9wb3J0YWwiOnRydWUsInBvcnRhbF9sb2dpbl9yZXF1aXJlZCI6ZmFsc2UsImlkIjo0MDAwMDA2NTU2LCJtYWluX3dpZGdldCI6dHJ1ZSwiZmNfaWQiOiJmMGYyODkwNjYzNDJiNGVlYTQzN2ZlYTYwNGU2MzUyMSIsInNob3ciOjEsInJlcXVpcmVkIjoyLCJoZWxwZGVza25hbWUiOiJDYXJlZXIgTGF1bmNoZXIgSW5kaWEgTHRkIiwibmFtZV9sYWJlbCI6Ik5hbWUiLCJtYWlsX2xhYmVsIjoiRW1haWwiLCJtZXNzYWdlX2xhYmVsIjoiTWVzc2FnZSIsInBob25lX2xhYmVsIjoiUGhvbmUgTnVtYmVyIiwidGV4dGZpZWxkX2xhYmVsIjoiVGV4dGZpZWxkIiwiZHJvcGRvd25fbGFiZWwiOiJEcm9wZG93biIsIndlYnVybCI6ImNhcmVlci5mcmVzaGRlc2suY29tIiwibm9kZXVybCI6ImNoYXQuZnJlc2hkZXNrLmNvbSIsImRlYnVnIjoxLCJtZSI6Ik1lIiwiZXhwaXJ5IjowLCJlbnZpcm9ubWVudCI6InByb2R1Y3Rpb24iLCJkZWZhdWx0X3dpbmRvd19vZmZzZXQiOjMwLCJkZWZhdWx0X21heGltaXplZF90aXRsZSI6IkNoYXQgaW4gcHJvZ3Jlc3MiLCJkZWZhdWx0X21pbmltaXplZF90aXRsZSI6IkxldCdzIHRhbGshIiwiZGVmYXVsdF90ZXh0X3BsYWNlIjoiWW91ciBNZXNzYWdlIiwiZGVmYXVsdF9jb25uZWN0aW5nX21zZyI6IldhaXRpbmcgZm9yIGFuIGFnZW50IiwiZGVmYXVsdF93ZWxjb21lX21lc3NhZ2UiOiJIaSEgSG93IGNhbiB3ZSBoZWxwIHlvdSB0b2RheT8iLCJkZWZhdWx0X3dhaXRfbWVzc2FnZSI6Ik9uZSBvZiB1cyB3aWxsIGJlIHdpdGggeW91IHJpZ2h0IGF3YXksIHBsZWFzZSB3YWl0LiIsImRlZmF1bHRfYWdlbnRfam9pbmVkX21zZyI6Int7YWdlbnRfbmFtZX19IGhhcyBqb2luZWQgdGhlIGNoYXQiLCJkZWZhdWx0X2FnZW50X2xlZnRfbXNnIjoie3thZ2VudF9uYW1lfX0gaGFzIGxlZnQgdGhlIGNoYXQiLCJkZWZhdWx0X2FnZW50X3RyYW5zZmVyX21zZ190b192aXNpdG9yIjoiWW91ciBjaGF0IGhhcyBiZWVuIHRyYW5zZmVycmVkIHRvIHt7YWdlbnRfbmFtZX19IiwiZGVmYXVsdF90aGFua19tZXNzYWdlIjoiVGhhbmsgeW91IGZvciBjaGF0dGluZyB3aXRoIHVzLiBJZiB5b3UgaGF2ZSBhZGRpdGlvbmFsIHF1ZXN0aW9ucywgZmVlbCBmcmVlIHRvIHBpbmcgdXMhIiwiZGVmYXVsdF9ub25fYXZhaWxhYmlsaXR5X21lc3NhZ2UiOiJPdXIgYWdlbnRzIGFyZSB1bmF2YWlsYWJsZSByaWdodCBub3cuIFNvcnJ5IGFib3V0IHRoYXQsIGJ1dCBwbGVhc2UgbGVhdmUgdXMgYSBtZXNzYWdlIGFuZCB3ZSdsbCBnZXQgcmlnaHQgYmFjay4iLCJkZWZhdWx0X3ByZWNoYXRfbWVzc2FnZSI6IldlIGNhbid0IHdhaXQgdG8gdGFsayB0byB5b3UuIEJ1dCBmaXJzdCwgcGxlYXNlIHRlbGwgdXMgYSBiaXQgYWJvdXQgeW91cnNlbGYuIiwiYWdlbnRfdHJhbnNmZXJlZF9tc2ciOiJZb3VyIGNoYXQgaGFzIGJlZW4gdHJhbnNmZXJyZWQgdG8ge3thZ2VudF9uYW1lfX0iLCJhZ2VudF9yZW9wZW5fY2hhdF9tc2ciOiJ7e2FnZW50X25hbWV9fSByZW9wZW5lZCB0aGUgY2hhdCIsInZpc2l0b3Jfc2lkZV9pbmFjdGl2ZV9tc2ciOiJUaGlzIGNoYXQgaGFzIGJlZW4gaW5hY3RpdmUgZm9yIHRoZSBwYXN0IDIwIG1pbnV0ZXMuIiwiYWdlbnRfZGlzY29ubmVjdF9tc2ciOiJ7e2FnZW50X25hbWV9fSBoYXMgYmVlbiBkaXNjb25uZWN0ZWQiLCJzaXRlX2lkIjoiZjBmMjg5MDY2MzQyYjRlZWE0MzdmZWE2MDRlNjM1MjEiLCJhY3RpdmUiOmZhbHNlLCJ3aWRnZXRfcHJlZmVyZW5jZXMiOnsid2luZG93X2NvbG9yIjoiIzc3Nzc3NyIsIndpbmRvd19vZmZzZXQiOjMwLCJ3aW5kb3dfcG9zaXRpb24iOiJCb3R0b20gUmlnaHQiLCJtYXhpbWl6ZWRfdGl0bGUiOiJUaGlzIGNoYXQgaXMgc28gb24hIiwibWluaW1pemVkX3RpdGxlIjoiTGV0J3MgdGFsayEiLCJ3ZWxjb21lX21lc3NhZ2UiOiJIaSEgSG93IGNhbiB3ZSBoZWxwIHlvdSB0b2RheT8iLCJ0aGFua19tZXNzYWdlIjoiVGhhbmsgeW91IGZvciBjaGF0dGluZyB3aXRoIHVzLiBJZiB5b3UgaGF2ZSBhZGRpdGlvbmFsIHF1ZXN0aW9ucywgZmVlbCBmcmVlIHRvIHBpbmcgdXMhIiwid2FpdF9tZXNzYWdlIjoiQWxsIG91ciBhZ2VudHMgYXJlIGJ1c3kgY2hhdHRpbmcgcmlnaHQgbm93LiBQbGVhc2UgaGFuZyBvbiBmb3IgYSBjb3VwbGUgb2YgbWludXRlcy4iLCJ0ZXh0X3BsYWNlIjoiWW91ciBNZXNzYWdlIiwiY29ubmVjdGluZ19tc2ciOiJXYWl0aW5nIGZvciBhbiBhZ2VudCIsImFnZW50X2pvaW5lZF9tc2ciOiIkIGhhcyBqb2luZWQgdGhlIGNoYXQiLCJhZ2VudF9sZWZ0X21zZyI6IiQgaGFzIGxlZnQgdGhlIGNoYXQifSwicm91dGluZyI6bnVsbCwicHJlY2hhdF9mb3JtIjp0cnVlLCJwcmVjaGF0X21lc3NhZ2UiOiJXZSBjYW4ndCB3YWl0IHRvIHRhbGsgdG8geW91LiBCdXQgZmlyc3QsIHBsZWFzZSB0YWtlIGEgY291cGxlIG9mIG1vbWVudHMgdG8gdGVsbCB1cyBhIGJpdCBhYm91dCB5b3Vyc2VsZi4iLCJwcmVjaGF0X2ZpZWxkcyI6eyJuYW1lIjp7InRpdGxlIjoiTmFtZSIsInNob3ciOiIyIn0sInBob25lIjp7InRpdGxlIjoiUGhvbmUiLCJzaG93IjoiMCJ9LCJlbWFpbCI6eyJ0aXRsZSI6IkVtYWlsIiwic2hvdyI6IjAifSwidGV4dGZpZWxkIjp7InRpdGxlIjoiTWVzc2FnZSIsInNob3ciOiIwIn0sImRyb3Bkb3duIjp7InRpdGxlIjoiRHJvcERvd24iLCJzaG93IjoiMCIsImxpc3QiOlsiIl19fSwiYnVzaW5lc3NfY2FsZW5kYXIiOm51bGwsIm5vbl9hdmFpbGFiaWxpdHlfbWVzc2FnZSI6bnVsbCwicHJvYWN0aXZlX2NoYXQiOmZhbHNlLCJwcm9hY3RpdmVfdGltZSI6MTUsInNpdGVfdXJsIjoiaHViaXQuZnJlc2hkZXNrLmNvbSIsImV4dGVybmFsX2lkIjpudWxsLCJkZWxldGVkIjpmYWxzZSwib2ZmbGluZV9jaGF0Ijp7InNob3ciOiIxIiwiZm9ybSI6eyJuYW1lIjoiTmFtZSIsImVtYWlsIjoiRW1haWwiLCJtZXNzYWdlIjoiTWVzc2FnZSJ9LCJtZXNzYWdlcyI6eyJ0aXRsZSI6IkxlYXZlIHVzIGEgbWVzc2FnZSEiLCJ0aGFuayI6IlRoYW5rIHlvdSBmb3Igd3JpdGluZyB0byB1cy4gV2Ugd2lsbCBnZXQgYmFjayB0byB5b3Ugc2hvcnRseS4iLCJ0aGFua19oZWFkZXIiOiJUaGFuayB5b3UhIn19LCJtb2JpbGUiOnRydWUsImNyZWF0ZWRfYXQiOiIyMDE0LTA5LTExVDA3OjEwOjE5LjAwMFoiLCJ1cGRhdGVkX2F0IjoiMjAxNC0xMC0xOFQxMDo0NjoxOC4wMDBaIn0=';</script>
+		<!-- chat code end -->
     
 </body>
 </html>
